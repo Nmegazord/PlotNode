@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            {% for key in portfolio[0].keys() %}
+                {% if key == "SUM(shares)" %}
+                    <th>Shares</th>
+                {% elif key == "symbol" %}
+                    <th>Symbol</th>
+                {% else %}
+                    <th>{{key}}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="4"></td>
+            <th>{{ total | usd }}</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        {% if portfolio[0].get('symbol') is not none %}
+            {% for dict_item in portfolio %}
+                <tr>
+                {% for value in dict_item.values() %}
+                    {% if value is float %}
+                        <td>{{value | usd}}</td>
+                    {% else %}
+                        <td>{{value}}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+        <tr>
+            <td>CASH</td>
+            <td colspan="3"></td>
+            <td>{{ cash | usd }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
