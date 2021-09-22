@@ -1,4 +1,2 @@
 # PlotNode
- My final project submission for cs50 is a data visualization dashboard coded in flask and plotly. Enjoy!
- 
- Check out its demo on [youtube](https://www.youtube.com/watch?v=IIRxf3xr4W8)!
+PlotNode is a data visualization tool mostly based on the structure of pset8/finance from [cs50](https://cs50.harvard.edu/). It allows users to register for a new account, change their password and logout. Once the account is logged in, the user can upload or delete uploaded .csv files. The files are personal and connected to each individual account. By clicking the "graph" button, the user can generate a scatter plot of the first 2 columns of each csv file, and additional buttons are available to generate statistics, such as a trendline that uses the least square method. Check out its demo on [youtube](https://www.youtube.com/watch?v=IIRxf3xr4W8)!
